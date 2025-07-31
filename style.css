@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #000;
+  color: white;
+}
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background: white;
+}
+.hero-text {
+  max-width: 600px;
+}
+.hero-text h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  margin-left: 60px
+}
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+.hero-text .btn {
+  padding: 10px 20px;
+  background: #ff0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 60px
+}
+.hero-img img {
+  width: 800px;
+  height: 600px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: white;
+}
+
+/* Slider container */
+.slider-wrapper {
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track that slides left */
+.slider-track {
+  display: flex;
+  width: 2400px; /* 800px * 3 images */
+  animation: slideLeft 12s linear infinite;
+}
+
+/* Each image */
+.slider-track img {
+  width: 800px;
+  height: 600px;
+  object-fit: cover;
+}
+
+/* Slide animation (right to left) */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(-800px);
+  }
+  66.66% {
+    transform: translateX(-1600px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.product-showcase {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.product-showcase img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  border-bottom: 3px solid red;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.reserve-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  background-color: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.reserve-btn:hover {
+  background-color: #cc0000;
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(10, 9, 9);
+  min-width: 1000px;
+  min-height: 400px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #f1ebeb;
+  font-size: 30px;
+}
+
+.dropdown-content a img {
+  width: 200px;
+  height: auto;
+}
+
+.dropdown-content a:hover {
+  background-color: #b83d08;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 15px 0 10px;
+  font-size: 20px;
+}
+
+.card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+  background-color: #0056b3;
+}
+
+.section-line {
+  width: 1500px;
+  height: 4px;
+
+  background-color: #000; /* Or any color */
+  border: none;
+  margin: 20px auto; /* Centered and spaced */
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white; /* or your preferred color */
+}
+
+.logo img {
+  height: 80px;
+  width: 80px;
+  margin-right: 20px;
+}

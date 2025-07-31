@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - A.P Pandey Infinity</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .contact-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 50px;
+      background: linear-gradient(to bottom, #cceeff, #fff);
+      flex-wrap: wrap;
+    }
+
+    .contact-image {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .contact-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+    }
+
+    .contact-form {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .contact-form h2 {
+      margin-bottom: 10px;
+      font-size: 2em;
+      border-bottom: 3px solid red;
+      display: inline-block;
+    }
+
+    .contact-form p {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .contact-form select,
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form button {
+      padding: 12px 24px;
+      background: #f44336;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #d32f2f;
+    }
+
+    #confirmationMessage {
+      display: none;
+      color: green;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+    }
+
+    header.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      padding: 20px;
+      color: white;
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .navbar nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    .navbar nav a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">
+  <img src="images/logo.png" alt="ScootrX Logo">
+  SCOOTRX - AYUSH RAI INFINITY
+</div>
+
+    <nav>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">EV Scooter ▾</a>
+        <div class="dropdown-content">
+          <a href="Activa.html"><img src="images/Activaimage/bike1.PNG" alt="Bike1"> Activa e.1LE</a>
+          <a href="Jupiter.html"><img src="images/jupiterimage/bike2.PNG" alt="Bike2"> Jupiter</a>
+          <a href="Dexi.html"><img src="images/deximage/bike3.PNG" alt="Bike3"> Dex NV</a>
+        </div>
+      </div>
+      <a href="index.html">Home</a>
+      <a href="stores.html">Stores</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-image">
+      <img src="images/contactimage.PNG" alt="Customer Support">
+    </div>
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <p>Have a specific question? Ask it here and we'll contact you with a quick response.</p>
+
+      <form id="contactForm">
+        <label for="variant">Select Variant</label>
+        <select id="variant" name="variant" required>
+          <option value="">Select Variant</option>
+          <option>Activa e.1LE</option>
+          <option>Jupiter</option>
+          <option>Dexi</option>
+        </select>
+
+        <label for="phone">Phone no.</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone no" required>
+
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Confirmation Message -->
+      <p id="confirmationMessage">
+        Your query has been submitted. We will contact you soon.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ScootrX – Ayush Rai Infinity. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const confirmation = document.getElementById("confirmationMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent form from refreshing the page
+      confirmation.style.display = "block";
+      form.reset(); // Clear form fields
+    });
+  </script>
+
+</body>
+</html>

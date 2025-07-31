@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Scooter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f5f5f5;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background: #222;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Book Your Scooter</h2>
+
+  <form id="bookingForm">
+    <label for="scooter">Select Scooter:</label>
+    <select id="scooter" name="scooter" required>
+      <option value="activa" data-price="4999">Activa e.1LE - ₹4999/day</option>
+      <option value="jupiter" data-price="3999">Jupiter - ₹3999/day</option>
+      <option value="dex" data-price="2999">Dexi  - ₹2999/day</option>
+    </select>
+
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="days">Number of Days:</label>
+    <input type="number" id="days" name="days" min="1" required />
+
+    <div class="total" id="totalPrice">Total: ₹0.00</div>
+
+    <button type="button" onclick="calculateTotal()">Calculate Price</button>
+    <button type="submit" onclick="return bookScooter()">Book Now</button>
+  </form>
+
+  <script>
+
+  function calculateTotal() {
+  const scooterSelect = document.getElementById('scooter');
+  const selectedOption = scooterSelect.options[scooterSelect.selectedIndex];
+  const pricePerDay = parseFloat(selectedOption.getAttribute('data-price'));
+
+  const days = parseInt(document.getElementById('days').value);
+  if (isNaN(days) || days <= 0) {
+    alert("Please enter a valid number of days.");
+    return false;
+  }
+
+  const basePrice = pricePerDay * days;
+  const gst = basePrice * 0.18;
+  const total = basePrice + gst;
+
+  // ✅ Save to localStorage
+  localStorage.setItem("selectedScooter", selectedOption.text);
+  localStorage.setItem("totalPrice", total.toFixed(2));
+
+  document.getElementById('totalPrice').innerText = `Total: ₹${total.toFixed(2)} (Incl. 18% GST)`;
+
+  // Redirect after short delay
+  setTimeout(() => {
+    window.location.href = "thankyou.html";
+  }, 1000);
+
+  return false;
+}
+
+</script>
+</body>
+</html>

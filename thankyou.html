@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You - A.P Pandey Infinity</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #222;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .navbar nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 40px;
+      background: #f8f8f8;
+      flex-wrap: wrap;
+    }
+
+    .hero-text, .thankyou-text {
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      color: #1a1a1a;
+    }
+
+    .hero-text p {
+      font-size: 1.3em;
+      margin-top: 15px;
+      color: #555;
+    }
+
+    .thankyou-text h2 {
+      font-size: 2.2em;
+      color: #006400;
+      margin-bottom: 20px;
+    }
+
+    .thankyou-details {
+      font-size: 1.2em;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero-text, .thankyou-text {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+  <img src="images/logo.png" alt="ScootrX Logo">
+  SCOOTRX - AYUSH RAI INFINITY
+</div>
+
+    <nav>
+        <div class="dropdown">
+      <a href="#" class="dropbtn">EV Scooter ▾</a>
+      <div class="dropdown-content">
+        <a href="Activa.html"><img src="images/Activaimage/bike1.PNG" alt="Bike1"> Activa e.1LE</a>
+        <a href="Jupiter.html"><img src="images/jupiterimage/bike2.PNG" alt="Bike2"> Jupiter</a>
+        <a href="Dexi.html"><img src="images/deximage/bike3.PNG" alt="Bike3"> Dex NV</a>
+        
+      </div>
+    </div>
+      <a href="index.html">Home</a>
+      <a href="stores.html">Stores</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <!-- Left Side: Hero Text -->
+    <div class="hero-text">
+      <h1>ARPIT E1 INFINITY – ELECTRIC SCOOTERS</h1>
+      <p>MADE FOR INDIAN ROADS</p>
+      <p>MADE IN NIET</p>
+    </div>
+
+    <!-- Right Side: Thank You Message -->
+    <div class="thankyou-text">
+      <h2>Thank You for Booking!</h2>
+      <p class="thankyou-details" id="scooterName">Scooter Booked: ...</p>
+      <p class="thankyou-details" id="scooterPrice">Total Price Paid: ...</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 ScootrX – Ayush Rai Infinity. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const scooter = localStorage.getItem("selectedScooter");
+    const price = localStorage.getItem("totalPrice");
+
+    document.getElementById("scooterName").innerText = scooter 
+      ? `Scooter Booked: ${scooter}` 
+      : "Scooter Booked: Not Found";
+
+    document.getElementById("scooterPrice").innerText = price 
+      ? `Total Price Paid: ₹${price} (incl. 18% GST)` 
+      : "Total Price Paid: Not Available";
+  </script>
+
+</body>
+</html>
